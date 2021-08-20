@@ -7,6 +7,7 @@ import random
 
 
 def main():
+    """Program that displays score category for user input and random score"""
     user_score = int(input("Enter score: "))
     category = determine_category(user_score)
     print_category(user_score, category)
@@ -17,6 +18,7 @@ def main():
 
 
 def determine_category(score):
+    """Determine category of score"""
     if score < 0 or score > 100:
         return "Invalid score"
     elif score >= 90:
@@ -28,6 +30,7 @@ def determine_category(score):
 
 
 def print_category(score, category):
+    """Print score and its category"""
     print(f"The score {score} is {category}")
 
 

@@ -9,6 +9,7 @@ Q - Quit"""
 
 
 def main():
+    """Program that converts temperatures"""
     print(MENU)
     choice = input(">>> ").upper()
     while choice != "Q":
@@ -27,14 +28,16 @@ def main():
     print("Thank you.")
 
 
-def convert_fahrenheit_to_celsius(fahrenheit):
-    celsius = 5 / 9 * (fahrenheit - 32)
-    return celsius
-
-
 def convert_celsius_to_fahrenheit(celsius):
+    """Convert celsius to fahrenheit"""
     fahrenheit = celsius * 9.0 / 5 + 32
     return fahrenheit
+
+
+def convert_fahrenheit_to_celsius(fahrenheit):
+    """Convert fahrenheit to celsius"""
+    celsius = 5 / 9 * (fahrenheit - 32)
+    return celsius
 
 
 main()
