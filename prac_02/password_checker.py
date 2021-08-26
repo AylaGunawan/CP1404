@@ -29,7 +29,8 @@ def main():
 
 def is_valid_password(password):
     """Determine if the provided password is valid."""
-    if len(password) < MIN_LENGTH or len(password) > MAX_LENGTH:
+    length = len(password)
+    if length < MIN_LENGTH or length > MAX_LENGTH:
         return False
     count_lower = 0
     count_upper = 0
