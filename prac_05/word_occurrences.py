@@ -17,7 +17,4 @@ for word in words:
         longest_word_length = len(word)
 
 for sorted_word in sorted(word_occurrences):
-    # print(f"{sorted_word} : {word_occurrences[sorted_word]}")
     print("{:{}} : {}".format(sorted_word, longest_word_length, word_occurrences[sorted_word]))
-
-print(longest_word_length)
