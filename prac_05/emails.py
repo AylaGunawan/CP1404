@@ -3,7 +3,7 @@ CP1404 - Practical 05
 Emails
 """
 
-YES_ANSWERS = ["", "Y", "YES"]
+YES_ANSWERS = ["", "Y", "YES"]  # to accept affirmative and empty strings like Linux
 # NO_ANSWERS = ["N", "NO"]
 
 
@@ -14,21 +14,10 @@ def main():
     while email != "":
         name = find_name_from_email(email)
         answer = input(f"Is your name {name}? (Y/n) ").upper()
-
-        # while answer not in YES_ANSWERS:
-        #     if answer in NO_ANSWERS:
-        #         name = input("Name: ").title()
-        #         break
-        #     else:
-        #         print("Invalid answer")
-        #         answer = input(f"Is your name {name}? (Y/n) ").upper()
-
         if answer not in YES_ANSWERS:
             name = input("Name: ")
-
         emails[email] = name
         email = get_valid_email()
-
     print()
     for email, name in emails.items():
         print(f"{name} ({email})")
@@ -45,9 +34,9 @@ def find_name_from_email(email):
 def get_valid_email():
     """Gets empty string or valid email with only 1 @"""
     email = input("Email: ")
-    if email == "":
-        return email
     while email.count("@") != 1:
+        if email == "":
+            return email
         print("Invalid email; use only 1 @")
         email = input("Email: ")
     return email
