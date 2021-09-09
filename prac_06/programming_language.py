@@ -1,6 +1,6 @@
 """
 CP1404 - Practical 06
-Programming Language Class File
+Programming Language Class
 """
 
 
