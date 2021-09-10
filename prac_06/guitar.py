@@ -2,6 +2,7 @@
 CP1404 - Practical 06
 Guitar Class
 """
+
 CURRENT_YEAR = 2021
 
 
