@@ -16,7 +16,7 @@ class Guitar:
 
     def __str__(self):
         """Return a formatted string for Guitar instance."""
-        return f"{self.name} ({self.year}) : ${self.cost:.,2f}"
+        return f"{self.name} ({self.year:.0f}) : ${self.cost:,.2f}"
 
     def get_age(self):
         """Return difference between Guitar instance's and current year."""
