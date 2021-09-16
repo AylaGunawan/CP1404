@@ -25,7 +25,7 @@ class ConvertMilesToKilometresApp(App):
 
     def handle_increment(self, miles, increment):
         """Handle up/down increment for input text."""
-        incremented_miles = float(miles) + increment
+        incremented_miles = self.convert_to_number(miles) + increment
         self.root.ids.input_miles.text = str(incremented_miles)
 
     def handle_convert(self, miles):
