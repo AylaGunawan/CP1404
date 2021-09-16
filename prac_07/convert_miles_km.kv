@@ -3,8 +3,8 @@ BoxLayout:
     BoxLayout:
         orientation: "horizontal"
         TextInput:
-            id: input_m
-            text: "34"
+            id: input_miles
+            text: ""
             font_size: 48
             multiline: False
         BoxLayout:
@@ -13,19 +13,19 @@ BoxLayout:
                 id: button_up
                 text: "Up"
                 font_size: 30
-                on_press: app.handle_up()
+                on_press: app.handle_increment(input_miles.text, 1)
             Button:
                 id: button_down
                 text: "Down"
                 font_size: 30
-                on_press: app.handle_down()
+                on_press: app.handle_increment(input_miles.text, -1)
     Button:
-        id: button_convert_m_to_km
-        text: "Convert m to km"
+        id: button_convert_miles_to_kilometres
+        text: "Convert miles to kilometres"
         font_size: 30
-        on_press: app.handle_convert()
+        on_press: app.handle_convert(input_miles.text)
     Label:
-        id: output_km
-        text: "54.717" # change
+        id: output_label
+        text: app.output_kilometres
         font_size: 48
         color: (1, 1, 0, 1)
