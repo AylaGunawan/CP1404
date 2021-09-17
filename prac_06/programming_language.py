@@ -20,7 +20,4 @@ class ProgrammingLanguage:
 
     def is_dynamic(self):
         """Return a Boolean if Programming Language instance is dynamic."""
-        if self.typing == "Dynamic":
-            return True
-        else:
-            return False
+        return self.typing == "Dynamic"
