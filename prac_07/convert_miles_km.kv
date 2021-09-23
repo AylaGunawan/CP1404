@@ -1,0 +1,33 @@
+BoxLayout:
+    orientation: "vertical"
+    BoxLayout:
+        orientation: "horizontal"
+        TextInput:
+            id: input_miles
+            text: ""
+            font_size: 48
+            multiline: False
+
+            on_text: app.handle_convert(input_miles.text)  # for Stage 2
+        BoxLayout:
+            orientation: "vertical"
+            Button:
+                id: button_up
+                text: "Up"
+                font_size: 30
+                on_press: app.handle_increment(input_miles.text, 1)
+            Button:
+                id: button_down
+                text: "Down"
+                font_size: 30
+                on_press: app.handle_increment(input_miles.text, -1)
+#    Button:
+#        id: button_convert_miles_to_kilometres
+#        text: "Convert miles to kilometres"
+#        font_size: 30
+#        on_press: app.handle_convert(input_miles.text)
+    Label:
+        id: output_label
+        text: app.output_kilometres
+        font_size: 48
+        color: (1, 1, 0, 1)
