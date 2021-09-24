@@ -7,7 +7,7 @@ from prac_08.taxi import Taxi
 
 # 1. Create a new taxi with name "Prius 1", 100 units of fuel and price of $1.23/km
 
-prius = Taxi("Prius 1", 100, 1.23)
+prius = Taxi("Prius 1", 100)
 
 # 2. Drive the taxi 40 km
 
