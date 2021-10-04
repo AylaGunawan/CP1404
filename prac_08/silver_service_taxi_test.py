@@ -15,7 +15,8 @@ def main():  # for testing
     print(f"{tesla.name} drove {tesla.drive(18)} km")
     print(tesla)
     print(f"For an {tesla.odometer} km trip in a {tesla.name} with fanciness of {tesla.fanciness}, the fare should be "
-          f"${tesla.get_fare()}")
+          f"approximately ${tesla.get_fare():.2f}")  # with Inheriting Enhancements applied
+    print(tesla)
     tesla.start_fare()
     print(tesla)
     tesla.add_fuel(50)
