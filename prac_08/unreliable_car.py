@@ -8,7 +8,7 @@ from random import randint
 
 
 class UnreliableCar(Car):
-    """Represent an UnreliableCar object."""
+    """Represent an UnreliableCar object, a specialised version of Car that includes reliability."""
 
     def __init__(self, name, fuel, reliability=0.0):
         """Initialise an UnreliableCar instance, based on parent class Car."""
