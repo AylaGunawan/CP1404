@@ -13,22 +13,22 @@ def main():
     """Taxi simulator program."""
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
     chosen_taxi = ""
-    bill = 0.00
+    bill = 0
 
     print("Let's drive!")
     print(MENU)
-    choice = input(">>> ").lower()  # exception handling for lower()?
+    choice = input(">>> ").lower()
     while choice != "q":
         if choice == "c":
             print("Taxis available:")
-            print_taxis(taxis)  # fuel, odo and current fare need to be :.1f
+            print_taxis(taxis)
             chosen_taxi = get_valid_taxi_index(taxis)
         elif choice == "d":
             if chosen_taxi == "":
                 print("You need to choose a taxi before you can drive")
             else:
                 drive_distance = get_valid_distance()
-                taxis[chosen_taxi].drive(drive_distance)  # DRY for taxis[chosen_taxi] and .get_fare()
+                taxis[chosen_taxi].drive(drive_distance)  # DRY? taxis[chosen_taxi] and .get_fare()?
                 print(f"Your {taxis[chosen_taxi].name} trip cost you ${taxis[chosen_taxi].get_fare():.2f}")
                 bill += taxis[chosen_taxi].get_fare()
                 taxis[chosen_taxi].start_fare()
@@ -49,12 +49,12 @@ def print_taxis(taxis):
 
 
 def get_valid_taxi_index(taxis):
-    """Get a valid taxi index within the list range"""
+    """Get a valid taxi index within the taxis list range"""
     is_valid_input = False
     while not is_valid_input:
         try:
             chosen_taxi = int(input("Choose taxi: "))
-            if chosen_taxi > (len(taxis) - 1):  # better way to say "last index number"?
+            if chosen_taxi > (len(taxis) - 1):
                 print("Invalid taxi choice")
                 chosen_taxi = ""
             return chosen_taxi
