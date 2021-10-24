@@ -33,8 +33,20 @@ def main():
 
 def get_fixed_filename(filename):
     """Return a 'fixed' version of filename."""
-    new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
-    return new_name
+    if " " in filename:
+        new_name = filename.title().replace(" ", "_").replace(".TXT", ".txt")
+        return new_name
+    else:
+        temp_name = ""
+        for index, character in enumerate(filename):
+            temp_name += character
+            try:
+                if filename[index].islower() and filename[index + 1].isupper():
+                    temp_name += "_"
+            except IndexError:  # easier to forgive?
+                pass
+        new_name = temp_name.replace(".TXT", ".txt")
+        return new_name
 
 
 def demo_walk():
