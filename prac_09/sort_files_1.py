@@ -10,7 +10,7 @@ CURRENT_DIRECTORY = "FilesToSort"
 
 
 def main():
-    """Program that sorts files by extension."""
+    """Program that makes folders to sort files by extension."""
     extensions = []
 
     os.chdir(CURRENT_DIRECTORY)
@@ -19,9 +19,9 @@ def main():
         if os.path.isdir(filename):
             continue
         extension_index = filename.find(".")
-        extension = filename[extension_index + 1:]
+        extension = filename[extension_index + 1:]  # extension = filename.split('.')[-1]
         extensions.append(extension)
-    extensions = set(extensions)
+    extensions = set(extensions)  # instructions say to use sets, but solutions don't?
 
     for extension in extensions:
         try:
@@ -32,7 +32,7 @@ def main():
     for filename in os.listdir('.'):
         for extension in extensions:
             if filename.endswith(extension):
-                shutil.move(filename, extension)
+                shutil.move(filename, extension)  # os.rename(filename, "{}/{}".format(extension, filename))
 
 
 main()
