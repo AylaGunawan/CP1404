@@ -1,6 +1,6 @@
 """
 CP1404 - Practical 10
-Wiki
+Wiki API
 """
 
 import wikipedia
